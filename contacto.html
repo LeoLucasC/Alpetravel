@@ -7,34 +7,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="assets/header.css">
 </head>
 <body>
+   
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="logo-container">
-                <img src="images/logo.jpg" alt="Alpetravel Logo" class="logo-img">
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo a la izquierda -->
+            <div class="header-logo">
+                <img src="/images/logo.jpg" alt="LPE Travel&Cruises" class="logo-img">
                 <div class="logo-text">
-                    <span class="logo-main">Alpetravel</span>
-                    <span class="logo-sub">Travel & Cruises</span>
+                    <span class="logo-acronym first-letter">Alpe</span>
+                    <span class="logo-full">Travel&Cruises</span>
                 </div>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#">Destinos</a></li>
-                    <li><a href="#">Cruceros</a></li>
-                    <li><a href="#">Hoteles</a></li>
-                    <li><a href="#">Vuelos</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
+    
+            <!-- Navegación centrada -->
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="fas fa-home"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Destinos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-ship"></i>
+                            <span>Cruceros</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-hotel"></i>
+                            <span>Hoteles</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            <span>Vuelos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contacto</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
+            <!-- Botones de acción -->
             <div class="header-actions">
-                <a href="contacto.html" class="btn btn-contact">Contacto</a>
-                <div class="mobile-menu-toggle">
+                <button class="cta-button">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Reservar</span>
+                </button>
+                <button class="mobile-menu-button">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </div>
+    
         </div>
     </header>
 

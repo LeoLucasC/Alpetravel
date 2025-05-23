@@ -1,0 +1,298 @@
+/* Estilos base del header - Versión mejorada */
+.main-header {
+    background-color: #ffffff;
+    padding: 25px 0; /* Reducido para mejor proporción */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 80px; /* Altura fija para contener todo */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px; /* Más padding lateral */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Ocupa toda la altura del header */
+}
+
+/* Logo mejorado */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%; /* Ajuste de altura */
+}
+
+.logo-img {
+    height: 80px; /* Tamaño más manejable */
+    width: auto;
+    object-fit: contain; /* Asegura que la imagen mantenga proporciones */
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Efecto sutil al hover */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+    height: 100%;
+    text-align: left;
+    margin-left: 10px;
+    font-family: 'Montserrat', sans-serif; /* o cualquier fuente moderna que prefieras */
+    color: #2a4365; /* color azul oscuro moderno - puedes cambiarlo */
+    cursor: default;
+    user-select: none;
+}
+
+.logo-acronym {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #3182ce; /* color azul más llamativo para el acrónimo */
+    transition: color 0.3s ease;
+}
+
+.first-letter {
+    color: #1a365d; /* color más oscuro para la primera letra */
+    font-size: 2.4rem; /* tamaño ligeramente mayor */
+}
+
+.logo-full {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #4a5568; /* color gris azulado para el texto completo */
+    margin-top: -5px; /* ajuste para acercarlo al acrónimo */
+}
+
+/* Efecto hover para interactividad */
+.logo-text:hover .logo-acronym {
+    color: #2c5282;
+}
+
+.logo-text:hover .logo-full {
+    color: #2d3748;
+}
+
+/* Versión para pantallas pequeñas */
+@media (max-width: 768px) {
+    .logo-acronym {
+        font-size: 1.8rem;
+    }
+    
+    .first-letter {
+        font-size: 2rem;
+    }
+    
+    .logo-full {
+        font-size: 0.9rem;
+    }
+}
+
+/* Importar fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Importar Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+
+/* Estilos de navegación */
+.header-nav {
+    position: absolute;
+    left: 52%;
+    transform: translateX(-50%);
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-nav a {
+    /* fuerza todo a minúsculas */
+    text-transform: lowercase;
+    /* para que ::first-letter funcione bien */
+    display: inline-block;
+  }
+  
+  .header-nav a::first-letter {
+    /* capitaliza sólo la primera letra de cada enlace */
+    text-transform: uppercase;
+  }
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link i {
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3182ce;
+}
+
+.nav-link:hover i {
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: #3182ce;
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3182ce;
+    border-radius: 2px;
+}
+
+/* Estilos de botones */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.cta-button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #3182ce;
+    border: 2px solid #3182ce;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(49, 130, 206, 0.1);
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #2d3748;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-button:hover {
+    color: #3182ce;
+    transform: scale(1.1);
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .nav-list {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-nav {
+        display: none;
+    }
+    
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .cta-button span {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 10px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+    }
+    
+    .cta-button i {
+        margin: 0;
+    }
+}
+
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .header-nav {
+        display: none;
+    }
+    
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .cta-button {
+        display: none;
+    }
+}

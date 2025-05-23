@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos - Alpetravel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/vuelos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Alpetravel Logo" class="logo-img">
+                <div class="logo-text">
+                    <span>Alpetravel</span>
+                    <span>Travel & Cruises</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Destinos</a></li>
+                    <li><a href="#">Cruceros</a></li>
+                    <li><a href="#">Hoteles</a></li>
+                    <li><a href="vuelos.html" class="active">Vuelos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="contacto.html" class="btn-contact">Contacto</a>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="flights-hero">
+        <div class="container">
+            <h1>Encuentra los mejores vuelos</h1>
+            <p>Compara y reserva vuelos a los mejores destinos del mundo</p>
+        </div>
+    </section>
+
+        <div class="flight-search-container">
+            <div class="container">
+                <!-- Pestañas con iconos -->
+                <div class="search-tabs">
+                    <button class="active">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Ida y vuelta</span>
+                    </button>
+                    <button>
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Solo ida</span>
+                    </button>
+                    <button>
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Multi-destino</span>
+                    </button>
+                </div>
+
+                <!-- Formulario de búsqueda -->
+                <form class="flight-search-form">
+                    <!-- Fila 1: Origen y Destino -->
+                    <div class="form-row">
+                        <div class="form-group with-icon">
+                            <label for="origin">Origen</label>
+                            <div class="input-container">
+                                <i class="fas fa-plane-departure"></i>
+                                <input type="text" id="origin" placeholder="Ciudad o aeropuerto" required>
+                                <button type="button" class="swap-btn" aria-label="Intercambiar origen y destino">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group with-icon">
+                            <label for="destination">Destino</label>
+                            <div class="input-container">
+                                <i class="fas fa-plane-arrival"></i>
+                                <input type="text" id="destination" placeholder="Ciudad o aeropuerto" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Fechas -->
+                    <div class="form-row">
+                        <div class="form-group with-icon">
+                            <label for="departure">Fecha de ida</label>
+                            <div class="input-container">
+                                <i class="far fa-calendar-alt"></i>
+                                <input type="text" id="departure" class="datepicker" placeholder="Seleccione fecha" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group with-icon" id="return-field">
+                            <label for="return">Fecha de vuelta</label>
+                            <div class="input-container">
+                                <i class="far fa-calendar-alt"></i>
+                                <input type="text" id="return" class="datepicker" placeholder="Seleccione fecha" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Pasajeros y Clase -->
+                    <div class="form-row">
+                        <div class="form-group with-icon">
+                            <label for="passengers">Pasajeros</label>
+                            <div class="input-container">
+                                <i class="fas fa-users"></i>
+                                <select id="passengers">
+                                    <option value="1">1 pasajero</option>
+                                    <option value="2" selected>2 pasajeros</option>
+                                    <option value="3">3 pasajeros</option>
+                                    <option value="4">4 pasajeros</option>
+                                    <option value="family">Familia (4+)</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        <div class="form-group with-icon">
+                            <label for="class">Clase</label>
+                            <div class="input-container">
+                                <i class="fas fa-business-time"></i>
+                                <select id="class">
+                                    <option value="economy">Económica</option>
+                                    <option value="premium">Premium Economy</option>
+                                    <option value="business">Business</option>
+                                    <option value="first">Primera Clase</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón de búsqueda -->
+                    <button type="submit" class="btn-search">
+                        <i class="fas fa-search"></i>
+                        <span>Buscar vuelos</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-destinations">
+        <div class="container">
+            <h2>Destinos destacados</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2" alt="Roma">
+                    <div class="card-content">
+                        <h3>Roma, Italia</h3>
+                        <div class="price">Desde $699</div>
+                        <a href="#" class="btn-small">Ver vuelos</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995" alt="Nueva York">
+                    <div class="card-content">
+                        <h3>Nueva York, USA</h3>
+                        <div class="price">Desde $549</div>
+                        <a href="#" class="btn-small">Ver vuelos</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be" alt="Tokio">
+                    <div class="card-content">
+                        <h3>Tokio, Japón</h3>
+                        <div class="price">Desde $1,199</div>
+                        <a href="#" class="btn-small">Ver vuelos</a>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25" alt="París">
+                    <div class="card-content">
+                        <h3>París, Francia</h3>
+                        <div class="price">Desde $759</div>
+                        <a href="#" class="btn-small">Ver vuelos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flight-deals">
+        <div class="container">
+            <h2>Ofertas especiales en vuelos</h2>
+            <div class="deals-container">
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Europa Express</h3>
+                        <span class="discount">-30%</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89" alt="Oferta Europa">
+                    <div class="deal-content">
+                        <div class="deal-info">
+                            <div class="info-item">
+                                <i class="fas fa-plane"></i>
+                                <span>Vuelos directos</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>Equipaje incluido</span>
+                            </div>
+                        </div>
+                        <div class="price-container">
+                            <span class="old-price">$1,200</span>
+                            <span class="current-price">$840</span>
+                        </div>
+                        <a href="#" class="btn-deal">Ver oferta</a>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-header">
+                        <h3>Caribe Paradise</h3>
+                        <span class="discount">-25%</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5" alt="Oferta Caribe">
+                    <div class="deal-content">
+                        <div class="deal-info">
+                            <div class="info-item">
+                                <i class="fas fa-plane"></i>
+                                <span>Vuelos + hotel</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Todo incluido</span>
+                            </div>
+                        </div>
+                        <div class="price-container">
+                            <span class="old-price">$950</span>
+                            <span class="current-price">$712</span>
+                        </div>
+                        <a href="#" class="btn-deal">Ver oferta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="airline-partners">
+        <div class="container">
+            <h2>Aerolíneas asociadas</h2>
+            <div class="airlines-grid">
+                <img src="https://via.placeholder.com/150x80?text=LATAM" alt="LATAM">
+                <img src="https://via.placeholder.com/150x80?text=Avianca" alt="Avianca">
+                <img src="https://via.placeholder.com/150x80?text=American" alt="American Airlines">
+                <img src="https://via.placeholder.com/150x80?text=Delta" alt="Delta">
+                <img src="https://via.placeholder.com/150x80?text=Iberia" alt="Iberia">
+            </div>
+        </div>
+    </section>
+
+    <section class="flight-tips">
+        <div class="container">
+            <h2>Consejos para tus vuelos</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <i class="fas fa-passport"></i>
+                    <h3>Documentación necesaria</h3>
+                    <p>Revisa los requisitos de pasaporte y visa para tu destino con al menos 3 meses de anticipación.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <h3>Equipaje inteligente</h3>
+                    <p>Conoce las políticas de equipaje de tu aerolínea para evitar cargos adicionales.</p>
+                </div>
+                <div class="tip-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Check-in anticipado</h3>
+                    <p>Realiza tu check-in en línea 24-48 horas antes para ahorrar tiempo en el aeropuerto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <h1>A</h1>
+                <div class="logo-text">
+                    <span>lpe</span>
+                    <span>Travel&Cruises</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="links-column">
+                    <h3>Destinos</h3>
+                    <ul>
+                        <li><a href="#">Europa</a></li>
+                        <li><a href="#">América</a></li>
+                        <li><a href="#">Asia</a></li>
+                        <li><a href="#">África</a></li>
+                    </ul>
+                </div>
+                <div class="links-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Vuelos</a></li>
+                        <li><a href="#">Hoteles</a></li>
+                        <li><a href="#">Cruceros</a></li>
+                        <li><a href="#">Seguros</a></li>
+                    </ul>
+                </div>
+                <div class="links-column">
+                    <h3>Compañía</h3>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Alpetravel. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="vuelos.js"></script>
+</body>
+</html>

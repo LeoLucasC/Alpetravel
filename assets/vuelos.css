@@ -1,0 +1,404 @@
+/* Estilos específicos para la página de vuelos */
+
+/* Hero section */
+.flights-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/fondovuelo.jpeg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 0 100px;
+    margin-top: 80px;
+}
+
+.flights-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.flights-hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Flight search section */
+.flight-search {
+    background-color: white;
+    padding: 40px 0;
+    margin-top: -50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.search-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-tabs button {
+    padding: 12px 25px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.search-tabs button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.flight-search-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.btn-search {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-search:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 92, 0, 0.3);
+}
+
+/* Featured destinations */
+.featured-destinations {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.featured-destinations h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Flight deals */
+.flight-deals {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.flight-deals h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.deals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.deal-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: white;
+}
+
+.deal-card:hover {
+    transform: translateY(-10px);
+}
+
+.deal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.deal-header h3 {
+    margin: 0;
+}
+
+.discount {
+    background-color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.deal-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.deal-content {
+    padding: 20px;
+}
+
+.deal-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+}
+
+.price-container {
+    margin-bottom: 20px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-light);
+    margin-right: 10px;
+}
+
+.current-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.btn-deal {
+    display: block;
+    text-align: center;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-deal:hover {
+    background-color: #e65c00;
+}
+
+/* Airline partners */
+.airline-partners {
+    padding: 60px 0;
+    background-color: var(--light-color);
+}
+
+.airline-partners h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+.airlines-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.airlines-grid img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.airlines-grid img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Flight tips */
+.flight-tips {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.flight-tips h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tip-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--light-color);
+    transition: transform 0.3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.tip-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.tip-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .flights-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .flights-hero p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flights-hero {
+        padding: 120px 0 80px;
+    }
+    
+    .flight-search {
+        margin-top: -30px;
+    }
+}

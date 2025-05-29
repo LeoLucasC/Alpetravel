@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="assets/header.css">
+    <link rel="stylesheet" href="assets/header.css">
+    <link rel="stylesheet" href="assets/carrusel.css">
 </head>
 <body>
     <!-- Header -->
@@ -78,80 +79,136 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Descubre el mundo con Alpetravel</h1>
-                <p class="hero-subtitle">Viajes exclusivos a los destinos más fascinantes del planeta</p>
-                <a href="#" class="btn btn-secondary btn-hero">
-                    <span>Explorar Destinos</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <div class="hero-scroll">
-                    <span>Desplázate</span>
-                    <div class="scroll-icon"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <div class="search-box">
-                <div class="search-tabs">
-                    <button class="tab-btn active" data-tab="flights">
-                        <i class="fas fa-plane"></i>
-                        <span>Vuelos</span>
-                    </button>
-                    <button class="tab-btn" data-tab="hotels">
-                        <i class="fas fa-hotel"></i>
-                        <span>Hoteles</span>
-                    </button>
-                    <button class="tab-btn" data-tab="packages">
-                        <i class="fas fa-suitcase"></i>
-                        <span>Paquetes</span>
-                    </button>
-                    <button class="tab-btn" data-tab="cruises">
-                        <i class="fas fa-ship"></i>
-                        <span>Cruceros</span>
-                    </button>
-                </div>
-                
-                <form class="search-form active" id="flights-form">
-                    <div class="form-grid">
-                        <div class="form-group floating">
-                            <input type="text" id="origin" placeholder=" " required>
-                            <label for="origin">Origen</label>
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="form-group floating">
-                            <input type="text" id="destination" placeholder=" " required>
-                            <label for="destination">Destino</label>
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="form-group floating">
-                            <input type="date" id="departure" placeholder=" " required>
-                            <label for="departure">Salida</label>
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="form-group floating">
-                            <input type="date" id="return" placeholder=" ">
-                            <label for="return">Regreso</label>
-                            <i class="fas fa-calendar-alt"></i>
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Descubre el mundo con Alpetravel</h1>
+                            <p class="hero-subtitle">Viajes exclusivos a los destinos más fascinantes del planeta</p>
+                            <a href="#" class="btn btn-secondary btn-hero">
+                                <span>Explorar Destinos</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-search">
-                        <span>Buscar Vuelos</span>
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                
-                <!-- Other forms would be here (hidden by default) -->
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1469474968028-566ce2e7e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Aventura en la Naturaleza</h1>
+                            <p class="hero-subtitle">Explora paisajes impresionantes y vive la aventura</p>
+                            <a href="#" class="btn btn-secondary btn-hero">
+                                <span>Explorar Destinos</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Ciudades Vibrantes</h1>
+                            <p class="hero-subtitle">Sumérgete en la cultura de las metrópolis más icónicas</p>
+                            <a href="#" class="btn btn-secondary btn-hero">
+                                <span>Explorar Destinos</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1508739773434-c26b3d09e206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+                    <div class="hero-overlay"></div>
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Paraísos Ocultos</h1>
+                            <p class="hero-subtitle">Descubre destinos secretos que te dejarán sin aliento</p>
+                            <a href="#" class="btn btn-secondary btn-hero">
+                                <span>Explorar Destinos</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
             </div>
         </div>
-    </section>
+        <div class="hero-scroll">
+            <span>Desplázate</span>
+            <div class="scroll-icon"></div>
+        </div>
+    </section>b
+   
+
+    <!--
+        <!- Search Section 
+        <section class="search-section">
+            <div class="container">
+                <div class="search-box">
+                    <div class="search-tabs">
+                        <button class="tab-btn active" data-tab="flights">
+                            <i class="fas fa-plane"></i>
+                            <span>VUELOS</span>
+                        </button>
+                        <button class="tab-btn" data-tab="hotels">
+                            <i class="fas fa-hotel"></i>
+                            <span>HOTELES</span>
+                        </button>
+                        <button class="tab-btn" data-tab="packages">
+                            <i class="fas fa-suitcase"></i>
+                            <span>PAQUETES</span>
+                        </button>
+                        <button class="tab-btn" data-tab="cruises">
+                            <i class="fas fa-ship"></i>
+                            <span>CRUCEROS</span>
+                        </button>
+                    </div>
+                    
+                    <form class="search-form active" id="flights-form">
+                        <div class="form-grid">
+                            <div class="form-group floating">
+                                <input type="text" id="origin" placeholder=" " required>
+                                <label for="origin">Origen</label>
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="text" id="destination" placeholder=" " required>
+                                <label for="destination">Destino</label>
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="date" id="departure" placeholder=" " required>
+                                <label for="departure">Salida</label>
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="date" id="return" placeholder=" ">
+                                <label for="return">Regreso</label>
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-search">
+                            <span>Buscar Vuelos</span>
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+        </section> 
+    -->
+
+    
 
     <!-- Destinations Section -->
     <section class="destinations-section">
@@ -473,5 +530,6 @@
     </a>
 
     <script src="script.js"></script>
+    <script src="carrusel.js"></script>
 </body>
 </html>

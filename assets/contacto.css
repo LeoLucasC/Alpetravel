@@ -278,6 +278,7 @@ img {
     transform: scale(1.1);
 }
 
+
 /* Hero Section */
 .contact-hero {
     position: relative;
@@ -286,7 +287,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/hero-contact.jpg') no-repeat center center/cover;
+    background: url('/images/ciudad_de_noche.jpg') no-repeat center center/cover;
     color: var(--white);
     margin-top: 80px;
     overflow: hidden;
@@ -298,7 +299,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,102,204,0.3) 0%, rgba(0,102,204,0.1) 100%);
+    background: rgba(0, 0, 0, 0.6); /* Capa negra con 60% de opacidad */
     z-index: 0;
 }
 

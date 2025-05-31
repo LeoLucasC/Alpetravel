@@ -286,7 +286,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('/images/ESPAÑA.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/hero-contact.jpg') no-repeat center center/cover;
     color: var(--white);
     margin-top: 80px;
     overflow: hidden;

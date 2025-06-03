@@ -613,92 +613,31 @@ img {
     }
 }
 
-
-/* Offers Section - Responsive */
+/* Offers Section */
 .offers-section {
     padding: 60px 0;
     background-color: var(--light-gray);
 }
 
-.offers-slider {
-    position: relative;
-    margin: 0 20px;
-}
-
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
+/* Contenedor de ofertas como cuadrícula */
+.offers-grid {
     display: flex;
-    justify-content: space-between;
-    padding: 0 5px;
-    z-index: 10;
-}
-
-.slider-prev,
-.slider-next {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--white);
-    color: var(--primary-color);
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.9;
-}
-
-.slider-prev:hover,
-.slider-next:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.offers-track {
-    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 15px 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 10px; /* Space for scroll hint */
 }
 
-.offers-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* Scroll hint for mobile */
-.offers-track::after {
-    content: '';
-    display: block;
-    min-width: 20px;
-    height: 1px;
-}
-
+/* Estilo de cada tarjeta de oferta */
 .offer-slide {
-    min-width: calc(100% - 40px);
-    scroll-snap-align: start;
     background-color: var(--white);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 
 .offer-slide:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     transform: translateY(-3px);
 }
 
@@ -793,67 +732,96 @@ img {
     color: var(--primary-color);
 }
 
-/* Responsive para móviles */
-/* Offers Section - Ajustes para móviles */
+/* Responsive para móviles (1 columna) */
 @media (max-width: 576px) {
-    .offers-track {
+    .offers-grid {
         display: flex;
-        flex-direction: column; /* Cambia a columna para apilar verticalmente */
-        overflow-x: visible; /* Elimina el desplazamiento lateral */
-        scroll-snap-type: none; /* Desactiva el snap */
-        padding: 0; /* Ajusta el padding */
+        flex-direction: column; /* Apila las tarjetas verticalmente */
     }
 
     .offer-slide {
-        min-width: 100%; /* Cada tarjeta ocupa todo el ancho */
         margin-bottom: 20px; /* Espacio entre tarjetas */
     }
 
-    .offers-track::after {
-        display: none; /* Elimina el espacio adicional */
-    }
-
-    .slider-controls {
-        display: none; /* Oculta los botones de navegación en móviles */
-    }
-}
-
-/* Asegúrate de que las reglas existentes no interfieran */
-.offers-track {
-    display: flex;
-    gap: 20px;
-    padding: 15px 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 10px;
-}
-
-/* Mantén las reglas para pantallas más grandes */
-@media (min-width: 600px) {
-    .offers-slider {
-        margin: 0 30px;
+    .offer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
     
-    .offer-slide {
-        min-width: calc(50% - 15px);
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
+/* Tablet Styles (2 columnas) */
+@media (min-width: 577px) and (max-width: 991px) {
+    .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+        gap: 20px;
+    }
+    
+    .offer-image {
+        height: 200px;
+    }
+    
+    .offer-title {
+        font-size: 1.2rem;
+    }
+    
+    .current-price {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop Styles (3 columnas) */
 @media (min-width: 992px) {
-    .offer-slide {
-        min-width: calc(33.333% - 20px);
+    .offers-section {
+        padding: 80px 0;
+    }
+    
+    .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+        gap: 20px;
+    }
+    
+    .offer-image {
+        height: 220px;
+    }
+    
+    .offer-content {
+        padding: 20px;
+    }
+    
+    .offer-title {
+        font-size:MX 1.3rem;
+    }
+    
+    .current-price {
+        font-size: 1.3rem;
     }
 }
 
-@media (min-width: 1200px) {
-    .offer-slide {
-        min-width: calc(25% - 23px);
+/* Special case for very small devices */
+@media (max-width: 360px) {
+    .offer-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .offer-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 }
-
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 0;
@@ -1408,6 +1376,11 @@ img {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px; /* Añade un poco de padding lateral para evitar que el contenido toque los bordes */
+}
+
+
+.hero-carousel .container {
     height: 100%;
     display: flex;
     flex-direction: column;

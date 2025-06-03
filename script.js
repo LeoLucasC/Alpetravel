@@ -83,6 +83,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+
 // ESTE ES DEL CARRUSEL DE IMÁGENES 
 
 

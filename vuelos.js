@@ -73,11 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     destinationCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.querySelector('.btn-small').style.backgroundColor = var(--secondary-color);
+            this.querySelector('.btn-small').style.backgroundColor = 'var(--secondary-color)';
         });
         
         card.addEventListener('mouseleave', function() {
-            this.querySelector('.btn-small').style.backgroundColor = var(--primary-color);
+            this.querySelector('.btn-small').style.backgroundColor = 'var(--primary-color)';
         });
     });
 });

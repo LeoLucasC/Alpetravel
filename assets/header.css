@@ -1,24 +1,24 @@
 /* Estilos base del header - Versión mejorada */
 .main-header {
     background-color: #ffffff;
-    padding: 25px 0; /* Reducido para mejor proporción */
+    padding: 25px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    height: 80px; /* Altura fija para contener todo */
+    height: 80px;
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px; /* Más padding lateral */
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%; /* Ocupa toda la altura del header */
+    height: 100%;
 }
 
 /* Logo mejorado */
@@ -26,18 +26,18 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    height: 100%; /* Ajuste de altura */
+    height: 100%;
 }
 
 .logo-img {
-    height: 80px; /* Tamaño más manejable */
+    height: 80px;
     width: auto;
-    object-fit: contain; /* Asegura que la imagen mantenga proporciones */
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .logo-img:hover {
-    transform: scale(1.05); /* Efecto sutil al hover */
+    transform: scale(1.05);
 }
 
 .logo-text {
@@ -48,8 +48,8 @@
     height: 100%;
     text-align: left;
     margin-left: 10px;
-    font-family: 'Montserrat', sans-serif; /* o cualquier fuente moderna que prefieras */
-    color: #2a4365; /* color azul oscuro moderno - puedes cambiarlo */
+    font-family: 'Montserrat', sans-serif;
+    color: #2a4365;
     cursor: default;
     user-select: none;
 }
@@ -59,24 +59,23 @@
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #3182ce; /* color azul más llamativo para el acrónimo */
+    color: #3182ce;
     transition: color 0.3s ease;
 }
 
 .first-letter {
-    color: #1a365d; /* color más oscuro para la primera letra */
-    font-size: 2.4rem; /* tamaño ligeramente mayor */
+    color: #1a365d;
+    font-size: 2.4rem;
 }
 
 .logo-full {
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-    color: #4a5568; /* color gris azulado para el texto completo */
-    margin-top: -5px; /* ajuste para acercarlo al acrónimo */
+    color: #4a5568;
+    margin-top: -5px;
 }
 
-/* Efecto hover para interactividad */
 .logo-text:hover .logo-acronym {
     color: #2c5282;
 }
@@ -100,32 +99,27 @@
     }
 }
 
-/* Importar fuente Poppins */
+/* Importar fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-/* Importar Font Awesome */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
 /* Estilos de navegación */
 .header-nav {
     position: absolute;
-    left: 52%;
+    left: 50%;
     transform: translateX(-50%);
     font-family: 'Poppins', sans-serif;
 }
 
 .header-nav a {
-    /* fuerza todo a minúsculas */
     text-transform: lowercase;
-    /* para que ::first-letter funcione bien */
     display: inline-block;
-  }
-  
-  .header-nav a::first-letter {
-    /* capitaliza sólo la primera letra de cada enlace */
+}
+
+.header-nav a::first-letter {
     text-transform: uppercase;
-  }
+}
 
 .nav-list {
     display: flex;
@@ -183,13 +177,57 @@
     border-radius: 2px;
 }
 
+/* Estilos de navegación móvil */
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 999;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav .nav-item {
+    margin-bottom: 15px;
+}
+
+.mobile-nav .nav-link {
+    color: #2d3748;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav .nav-link:hover {
+    color: #3182ce;
+    background-color: #f7fafc;
+    border-radius: 8px;
+}
+
+.mobile-nav .nav-link.active {
+    color: #3182ce;
+}
+
 /* Estilos de botones */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 15px;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 .cta-button {
@@ -240,9 +278,6 @@
     transform: scale(1.1);
 }
 
-
-
-
 /* Responsive */
 @media (max-width: 1024px) {
     .nav-list {
@@ -256,6 +291,10 @@
 
 @media (max-width: 768px) {
     .header-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
         display: none;
     }
     
@@ -280,11 +319,13 @@
     }
 }
 
-
-
-/* Responsive */
+/* Responsive para pantallas menores a 992px */
 @media (max-width: 992px) {
     .header-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
         display: none;
     }
     

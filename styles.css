@@ -444,19 +444,18 @@ img {
 
 /* Offers Section */
 .offers-section {
-    padding: 80px 0;
-    background-color: var(--light-bg);
+    padding: 60px 0;
+    background-color: var(--light-gray);
 }
-
 .offers-container {
     position: relative;
 }
 
 .offers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
 }
 
 .offer-card {
@@ -693,6 +692,13 @@ img {
     font-size: 0.7rem;
 }
 
+.offer-inclusions .more-items {
+    background-color: transparent; /* Sin fondo para diferenciarlo */
+    font-style: italic; /* Estilo cursiva para "y más..." */
+    padding: 3px 6px;
+    color: #6b7280; /* Color más suave */
+}
+
 .offer-title {
     font-size: 1.1rem;
     margin-bottom: 8px;
@@ -715,9 +721,48 @@ img {
     gap: 10px;
 }
 
+.price-option .hotel-name {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: block;
+}
+
 .price {
     display: flex;
     flex-direction: column;
+}
+
+
+.offer-prices {
+    margin-bottom: 12px;
+}
+
+.price-option {
+    margin-bottom: 8px;
+}
+
+.price-option .hotel-name {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    display: block;
+}
+
+.price-option .current-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.currency-usd {
+    font-size: 1.6rem; /* Tamaño más grande para dólares */
+    font-weight: 700;
+    color: var(--primary-color); /* Color destacado, ej. azul */
+}
+
+.currency-pen {
+    font-size: 0.9rem; /* Tamaño más pequeño para soles */
+    font-weight: 500;
+    color: #6b7280; /* Color más suave, ej. gris */
 }
 
 .old-price {
@@ -731,6 +776,39 @@ img {
     font-weight: 700;
     color: var(--primary-color);
 }
+
+.offer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.offer-inclusions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Reducido el espacio entre ítems */
+    margin-bottom: 12px;
+    font-size: 0.75rem; /* Tamaño de fuente más pequeño */
+    color: var(--text-light);
+}
+
+.offer-inclusions span {
+    display: flex;
+    align-items: center;
+    gap: 4px; /* Espacio entre ícono y texto */
+    background-color: #f7fafc;
+    padding: 3px 6px; /* Padding más pequeño */
+    border-radius: 10px; /* Bordes ligeramente más suaves */
+}
+
+.offer-inclusions i {
+    font-size: 0.65rem; /* Íconos más pequeños */
+    color: var(--primary-color);
+}
+
 
 /* Responsive para móviles (1 columna) */
 @media (max-width: 576px) {
@@ -1496,3 +1574,271 @@ img {
     }
 }
 
+/* Botones de navegación del carrusel de las promociones  */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Fondo para evitar blanco durante la transición */
+}
+
+.carousel-inner {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block; /* Aseguramos que todas las imágenes estén visibles */
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.offer-image {
+    position: relative;
+    height: 180px;
+}
+
+.offer-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #ff6600;
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* seccion de hoteles*/
+
+/* Sección de hoteles - Carrusel con efecto central */
+.hotels-modern-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.section-description {
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hotels-modern-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.hotel-modern-slide {
+    flex: 0 0 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+    transform: scale(0.85);
+    opacity: 0.8;
+    filter: brightness(0.9);
+}
+
+.hotel-modern-slide.center {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(1);
+    z-index: 2;
+}
+
+.hotel-modern-slide:not(.center) {
+    transform: scale(0.85);
+    opacity: 0.8;
+    filter: brightness(0.9);
+}
+
+.hotel-modern-image {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.hotel-modern-slide.center .hotel-modern-image {
+    height: 250px;
+    box-shadow: 0 15px 30px rgba(0, 77, 153, 0.3);
+}
+
+.hotel-modern-slide.center .hotel-modern-content {
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-modern-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-modern-content {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.hotel-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.hotel-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hotel-meta i {
+    color: #004d99;
+}
+
+.hotel-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.hotel-slide.center .hotel-title {
+    font-size: 1.5rem;
+}
+
+.hotel-description {
+    color: #6c757d;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.hotel-prices .current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #004d99;
+}
+
+.hotel-slide.center .hotel-prices .current-price {
+    font-size: 1.8rem;
+}
+
+.hotel-inclusions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.hotel-inclusions span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    background-color: #e9ecef;
+    border-radius: 12px;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #004d99;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: #003a73;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hotel-modern-slide {
+        flex: 0 0 50%;
+    }
+    
+    .hotel-modern-slide.center {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hotel-modern-slide {
+        flex: 0 0 100%;
+    }
+    
+    .hotel-modern-slide.center {
+        flex: 0 0 100%;
+    }
+    
+    .hotel-modern-slide:not(.center) {
+        display: none;
+    }
+}

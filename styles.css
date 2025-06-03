@@ -613,7 +613,7 @@ img {
     }
 }
 
-/* Offers Section */
+
 /* Offers Section - Responsive */
 .offers-section {
     padding: 60px 0;
@@ -794,20 +794,44 @@ img {
 }
 
 /* Responsive para móviles */
+/* Offers Section - Ajustes para móviles */
 @media (max-width: 576px) {
-    .offer-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+    .offers-track {
+        display: flex;
+        flex-direction: column; /* Cambia a columna para apilar verticalmente */
+        overflow-x: visible; /* Elimina el desplazamiento lateral */
+        scroll-snap-type: none; /* Desactiva el snap */
+        padding: 0; /* Ajusta el padding */
     }
-    
-    .btn {
-        width: 100%;
-        text-align: center;
+
+    .offer-slide {
+        min-width: 100%; /* Cada tarjeta ocupa todo el ancho */
+        margin-bottom: 20px; /* Espacio entre tarjetas */
+    }
+
+    .offers-track::after {
+        display: none; /* Elimina el espacio adicional */
+    }
+
+    .slider-controls {
+        display: none; /* Oculta los botones de navegación en móviles */
     }
 }
 
-/* Tablet Styles */
+/* Asegúrate de que las reglas existentes no interfieran */
+.offers-track {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+}
+
+/* Mantén las reglas para pantallas más grandes */
 @media (min-width: 600px) {
     .offers-slider {
         margin: 0 30px;
@@ -816,79 +840,17 @@ img {
     .offer-slide {
         min-width: calc(50% - 15px);
     }
-    
-    .offer-image {
-        height: 200px;
-    }
-    
-    .offer-title {
-        font-size: 1.2rem;
-    }
-    
-    .current-price {
-        font-size: 1.2rem;
-    }
 }
 
-/* Desktop Styles */
 @media (min-width: 992px) {
-    .offers-section {
-        padding: 80px 0;
-    }
-    
-    .offers-slider {
-        margin: 0 40px;
-    }
-    
     .offer-slide {
         min-width: calc(33.333% - 20px);
     }
-    
-    .slider-prev,
-    .slider-next {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .offer-image {
-        height: 220px;
-    }
-    
-    .offer-content {
-        padding: 20px;
-    }
-    
-    .offer-title {
-        font-size: 1.3rem;
-    }
-    
-    .current-price {
-        font-size: 1.3rem;
-    }
 }
 
-/* Large Desktop Styles */
 @media (min-width: 1200px) {
     .offer-slide {
         min-width: calc(25% - 23px);
-    }
-}
-
-/* Special case for very small devices */
-@media (max-width: 360px) {
-    .offer-meta {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .offer-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .btn {
-        width: 100%;
-        text-align: center;
     }
 }
 

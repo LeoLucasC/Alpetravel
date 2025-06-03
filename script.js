@@ -87,45 +87,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM completamente cargado, iniciando carrusel');
+
     const slides = document.querySelectorAll('.carousel-slide');
+    console.log(`Se encontraron ${slides.length} diapositivas`);
+
     const dots = document.querySelectorAll('.dot');
+    console.log(`Se encontraron ${dots.length} puntos de navegación`);
+
     let currentSlide = 0;
     const totalSlides = slides.length;
 
     function showSlide(index) {
-        // Ensure index stays within bounds
+        console.log(`Intentando mostrar diapositiva con índice: ${index}`);
         currentSlide = (index + totalSlides) % totalSlides;
+        console.log(`Índice actual ajustado a: ${currentSlide}`);
 
-        // Update slide position
         const slidesContainer = document.querySelector('.carousel-slides');
-        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        if (slidesContainer) {
+            console.log('Contenedor de diapositivas encontrado, aplicando transformación');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        } else {
+            console.error('Error: No se encontró el contenedor .carousel-slides');
+        }
 
-        // Update active slide and dot
         slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentSlide);
+            const isActive = i === currentSlide;
+            slide.classList.toggle('active', isActive);
+            console.log(`Diapositiva ${i} está ${isActive ? 'activa' : 'inactiva'}`);
         });
+
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlide);
+            const isActive = i === currentSlide;
+            dot.classList.toggle('active', isActive);
+            console.log(`Punto ${i} está ${isActive ? 'activo' : 'inactivo'}`);
         });
     }
 
-    // Auto slide every 5 seconds
     let autoSlide = setInterval(() => {
+        console.log('Cambiando a la siguiente diapositiva automáticamente');
         showSlide(currentSlide + 1);
     }, 5000);
 
-    // Dot navigation
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
-            clearInterval(autoSlide); // Pause auto-slide on manual navigation
+            console.log(`Click detectado en el punto con data-slide: ${dot.dataset.slide}`);
+            clearInterval(autoSlide);
+            console.log('Auto-slide pausado');
             showSlide(parseInt(dot.dataset.slide));
-            // Resume auto-slide after 5 seconds
+            console.log('Auto-slide reanudado después de 5 segundos');
             autoSlide = setInterval(() => {
                 showSlide(currentSlide + 1);
             }, 5000);
         });
     });
 
-    // Initialize first slide
+    console.log('Inicializando primera diapositiva');
     showSlide(currentSlide);
 });

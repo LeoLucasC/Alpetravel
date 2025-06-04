@@ -1547,7 +1547,11 @@ img {
     margin: 10px auto;
     position: relative;
 }
-
+.current-price strong {
+    color: #ff5722; /* Color destacado */
+    font-weight: bold;
+    margin-right: 4px;
+}
 .scroll-icon::before {
     content: '';
     width: 4px;
